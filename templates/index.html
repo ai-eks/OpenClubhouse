@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Open Clubhouse</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+    <div>
+        <div class="d-flex justify-content-between fixed-bottom playbar" id="playbar">
+            <div>
+                <button class="btn btn-outline-info" data-toggle="modal" data-target="#words">
+                    Info
+                </button>
+            </div>
+
+            <div class="text-center">
+                <b>Current Playing:</b>
+                <marquee direction="left" scrollamount="2" class="current">
+                    <i id="current">None</i>
+                </marquee>
+            </div>
+            <div>
+                <button class="btn btn-outline-danger" id="stop">
+                    Stop
+                </button>
+            </div>
+
+        </div>
+        <div class="text-center">
+            <div class="spinner-border text-danger" role="status" id="loading">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" id="words">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">作者的话/Author's words</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>这是一个第三方Clubhouse音频播放器，我希望即便没有邀请码和iPhone也能听到CH上的各种声音。所有的房间权限都是通过个人的Session获取。所有音频的版权都归Clubhouse和其用户所有。
+                        </p>
+                        <p>This is a third part Clubhouse audio player open for everyone. I hope that anyone without
+                            invite code or iPhone can also hear the voice. All room accesses are acquired from
+                            personal session, and all copyrights of the voice are belongs to Clubhouse and its users.
+                        </p>
+                        <p>但愿这个小站能顺利运行。</p>
+                        <p>Hope this web can run as normal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="list-group" id="channels">
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="/static/AgoraRTC_N-4.3.0.js"></script>
+    <script src="/static/openCH.js"></script>
+    <script>
+        $(document).ready(function () {
+            getChannels();
+            if (localStorage.getItem('firstlook') !== "looked") {
+                $("#words").modal();
+                localStorage.setItem('firstlook', "looked");
+            }
+        })
+    </script>
+</body>
+</html>
