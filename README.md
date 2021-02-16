@@ -6,12 +6,23 @@ A third-part web application based on flask to play Clubhouse audio.
 
 This is a third part Clubhouse audio player open for everyone. I hope that anyone without invite code or iPhone can also hear the voice. All room accesses are acquired from personal session, and all copyrights of the voice are belongs to Clubhouse and its users.
 
+## Preview
+
+Index Page:
+
+![index shortcut](./doc/index.png)
+
+Room Detail Page:
+
+![room shortcut](./doc/room.png)
+
 ## Run
 
-1. Install python packages by `pip install -r requirements.txt`
-2. Modify configs in config.py. Especially the SECRET_KEY in production environment.
-3. Modify environment variables in run.sh.
-4. Execute `sh setEnv.sh` to run this code.
+1. This app needs a worker client to collect CH channel info, which will be on public soon.
+2. Install python packages by `pip install -r requirements.txt`
+3. Modify configs in config.py. Especially the SECRET_KEY in production environment.
+4. Modify environment variables in run.sh.
+5. Execute `sh setEnv.sh` to run this code.
 
 ## Third-part software
 
