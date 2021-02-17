@@ -18,7 +18,7 @@ Room Detail Page:
 
 ## Run
 
-1. This app needs a worker client to collect CH channel info, which will be on public soon.
+1. This app requires a client [OpenClubhouse-Worker](https://github.com/ai-eks/OpenClubhouse-Worker) to sync channel data.
 2. Install python packages by `pip install -r requirements.txt`
 3. Modify configs in config.py. Especially the SECRET_KEY in production environment.
 4. Modify environment variables in run.sh.
