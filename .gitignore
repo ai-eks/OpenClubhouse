@@ -128,7 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Vscode
+.vscode
 
 # OpenClubhouse
-
 *_dev.*

@@ -35,3 +35,6 @@ a.btn.disabled.btn-playing{
   text-overflow: ellipsis;
   white-space: nowrap; 
 }
+#loading{
+  margin-top:50%;
+}

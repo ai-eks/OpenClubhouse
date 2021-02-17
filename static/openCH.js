@@ -175,7 +175,7 @@ async function getChannel(room) {
                 <div class="players row justify-content-center" id="players">
                 </div> -->
                 <hr>
-                <h5>${users.length} Users</h5>
+                <h5>${users.length} Users of All</h5>
                 <div class="users row justify-content-center" id="users">
                 </div>
             </div>
