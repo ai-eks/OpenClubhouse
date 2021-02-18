@@ -1,11 +1,5 @@
-from flask import Blueprint
-from flask import render_template
-from flask import jsonify
-
-
-# from db import get_db
-# from models.channel import Channels
 from cache import channelsCache
+from flask import Blueprint, current_app, jsonify, render_template
 
 bp = Blueprint("clubhouse", __name__)
 
@@ -27,7 +21,7 @@ def getChannels():
 @bp.route("/room/<string:room>")
 def join(room):
     """"""
-    return render_template("channel.html")
+    return render_template("channel.html", user_owner_id=current_app.config['OWNER_USER_ID'])
 
 
 @bp.route("/api/room/<string:room>")
@@ -36,7 +30,7 @@ def getChannel(room):
     if room in rooms and rooms[room]['channel']['joined'] is True:
         # print(f"{len(rooms[room]['users'])}")
         return rooms[room]
-    return jsonify(None)
+    return jsonify(None, user_owner_id=current_app.config['OWNER_USER_ID'])
 
 
 @bp.route("/test")

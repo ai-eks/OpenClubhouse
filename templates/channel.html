@@ -8,7 +8,16 @@
     <title>Open Clubhouse</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        html body {
+            font-family: sans-serif;
+            background: #F2EFE4;
+        }
+
+        .users img {
+            width: 50px;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,6 +37,7 @@
     <script src="/static/openCH.js"></script>
     <script>
         $(document).ready(function () {
+            initOptions('938de3e8055e42b281bb8c6f69c21f78', '{{ owner_user_id }}');
             const paths = $(location).attr('pathname').split('/');
             getChannel(paths[paths.length - 1]);
         })
