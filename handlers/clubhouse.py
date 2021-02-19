@@ -13,7 +13,6 @@ def index():
 @bp.route("/api/getChannels")
 def getChannels():
     rooms, channels = channelsCache.get()
-    # channels.sort(key=lambda x:x.num_all)
     print("len of channels:", len(channels))
     return jsonify(channels)
 
@@ -28,7 +27,6 @@ def join(room):
 def getChannel(room):
     rooms, channels = channelsCache.get()
     if room in rooms and rooms[room]['channel']['joined'] is True:
-        # print(f"{len(rooms[room]['users'])}")
         return rooms[room]
     return jsonify(None, user_owner_id=current_app.config['OWNER_USER_ID'])
 

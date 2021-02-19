@@ -4,7 +4,11 @@ A third-part open web application based on flask to play Clubhouse audio for [ht
 
 ## Statement
 
-This is a third part Clubhouse audio player open for everyone. I hope that anyone without invite code or iPhone can also hear the voice. All room accesses are acquired from personal session, and all copyrights of the voice are belongs to Clubhouse and its users.
+This is a third part Clubhouse audio player. I hope that everybody can hear the voice. So it is a open Clubhouse client for Android, for Computer, and for anyone without invite code.
+
+All room accesses are acquired from personal session, and all copyrights of the voice are belongs to JoinClubhouse.com and its users.
+
+If you have any question or suggestion, issues are welcome.
 
 ## Preview
 
@@ -41,12 +45,15 @@ Room Detail Page:
 | ⬜️   | Add CDN                             | Optimize | Middle   |
 | ✅   | Remove style file                   | Optimize |          |
 | ⬜️   | Auto deployment                     | Optimize | low      |
+| ✅   | Prioritize cache update time        | Optimize | High     |
+| ⬜️   | Make cache update action async      | Optimize | Middle   |
 | ✅   | User_id can't be customized         | Bug      | High     |
 | ✅   | Too much speaker icons in room page | Bug      | Middle   |
-| ⬜️   | Some channel can't be played        | Bug?     | Low      |
+| ⬜️   | Some channel can't be played        | Bug      | Low      |
+| ⬜️   | - Token timeout                     | Bug      | Middle   |
+| ⬜️   | - Cache isn't updated               | Bug      | Low      |
 | ⬜️   | Add comment for each Room, Gitalk?  | Feature  | Low      |
 | ⬜️   | Add more descriptions in index page | Feature  | Middle   |
-| ⬜️   | Make cache update action async      | Feature  | High     |
 | ⬜️   | Add recorder                        | Feature  | Very low |
 
 ## Reference
