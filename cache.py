@@ -2,7 +2,8 @@ from datetime import datetime as dt, timedelta as td
 from models.channel import Channels
 from config import CACHE_INTERVAL
 
-class Channels_Cache():
+
+class ChannelsCache():
     def __init__(self, cache_interval: td) -> None:
         # self.channels = None
         self.simplifyChannels = None
@@ -10,11 +11,17 @@ class Channels_Cache():
         self.cache_interval = cache_interval
         self.last_sync_time = dt.now()
 
+    def init_cache(self, logger):
+        if logger is None:
+            raise Exception("Logger of ChannelsCache can't be None")
+        self.logger = logger
+        self.update()
+
     def update(self):
         current_time = dt.now()
         if self.simplifyChannels is None or current_time - self.last_sync_time >= self.cache_interval:
             self.last_sync_time = current_time
-            print(f"Update Channel cache at {current_time}")
+            self.logger.info(f"Start updating Channel cache at {current_time}")
             channels = Channels.objects(
                 success=True)  # .order_by('-num_all')
             self.rooms = {ch.channel: {
@@ -37,13 +44,15 @@ class Channels_Cache():
                     "joined": ch.joined
                 }
             } for ch in channels}
-            self.simplifyChannels = list(x['channel']for x in self.rooms.values())
+            self.simplifyChannels = list(x['channel']
+                                         for x in self.rooms.values())
             self.simplifyChannels.sort(
                 key=lambda x: x['num_all'], reverse=True)
+            self.logger.info(f"Cache updated at {dt.now()}")
 
     def get(self):
         self.update()
         return self.rooms, self.simplifyChannels
 
 
-channelsCache = Channels_Cache(td(minutes=CACHE_INTERVAL))
+channelsCache = ChannelsCache(td(minutes=CACHE_INTERVAL))

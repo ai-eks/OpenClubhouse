@@ -111,7 +111,8 @@
                         </p>
                         <p>欢迎各位小伙伴在 GitHub issues 中提出你的问题和建议。</p>
                         <p>If you have any question or suggestion, issues are welcome.</p>
-                        <p>GitHub: <a href="https://github.com/ai-eks/OpenClubhouse" target="_blank">https://github.com/ai-eks/OpenClubhouse</a></p>
+                        <p>GitHub: <a href="https://github.com/ai-eks/OpenClubhouse"
+                                target="_blank">https://github.com/ai-eks/OpenClubhouse</a></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -131,7 +132,7 @@
     <script src="/static/openCH.js"></script>
     <script>
         $(document).ready(function () {
-            initOptions('938de3e8055e42b281bb8c6f69c21f78', '{{ owner_user_id }}');
+            initOptions('938de3e8055e42b281bb8c6f69c21f78', {{ owner_user_id }});
             getChannels();
             if (localStorage.getItem('firstlook') !== "looked") {
                 $("#words").modal();

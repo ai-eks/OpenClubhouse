@@ -2,6 +2,7 @@ import os
 
 from flask import Flask
 from flask_mongoengine import MongoEngine
+from cache import channelsCache
 
 
 def create_app(test_config=None):
@@ -26,6 +27,8 @@ def create_app(test_config=None):
         return {"alive": True}
 
     db = MongoEngine(app)
+    channelsCache.init_cache(app.logger)
+
     # apply the blueprints to the app
     from handlers import clubhouse
 
