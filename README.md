@@ -1,12 +1,12 @@
 # OpenClubhouse
 
-A third-part open web application based on flask to play Clubhouse audio for [https://opench.aix.uy](https://opench.aix.uy).
+A third-party open web application based on flask to play Clubhouse audio for [https://opench.aix.uy](https://opench.aix.uy).
 
 ## Statement
 
-This is a third part Clubhouse audio player. I hope that everybody can hear the voice. So it is a open Clubhouse client for Android, for Computer, and for anyone without invite code.
+This is a third-party Clubhouse audio player. I hope that everybody can hear the voice. So it is a open Clubhouse client for Android, for Desktop Computer, and for anyone without invite code.
 
-All room accesses are acquired from personal session, and all copyrights of the voice are belongs to JoinClubhouse.com and its users.
+All room accesses are acquired from my personal session, and all copyrights of the voice are belongs to JoinClubhouse.com and its users.
 
 If you have any question or suggestion, issues are welcome.
 
@@ -28,7 +28,7 @@ Room Detail Page:
 4. Modify environment variables in run.sh.
 5. Execute `sh setEnv.sh` to run this code.
 
-## Third-part software
+## Third-party software Dependencies
 
 - Python
 - Flask
