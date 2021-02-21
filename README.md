@@ -60,3 +60,9 @@ Room Detail Page:
 
 - [Agora SDK](https://docs.agora.io/en/Voice/API%20Reference/web_ng/index.html)
 - <https://github.com/zhuowei/hipster.house>
+
+## Running in Docker
+```
+docker build -t och .
+docker run och
+```
