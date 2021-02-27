@@ -43,6 +43,12 @@ Room Detail Page:
 4. Modify environment variables in run.sh.
 5. Execute `sh setEnv.sh` to run this code.
 
+## Running in Docker
+```
+docker build -t och .
+docker run och
+```
+
 ## Third-party software Dependencies
 
 - Python
@@ -76,3 +82,4 @@ Room Detail Page:
 - [Agora SDK](https://docs.agora.io/en/Voice/API%20Reference/web_ng/index.html)
 - <https://github.com/zhuowei/hipster.house>
 - [MediaRecorder Web API](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder)
+
